@@ -1,4 +1,9 @@
-## Running React on Repl.it
+## Description:
+    webApp for food recipe using React,Context API,CSS and fetched data from Meals DB.
+
+
+
+### Running React on Repl.it
 
 [React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
 
@@ -7,8 +12,6 @@
 Using the two in conjunction is one of the fastest ways to build a web app.
 
 
-### Description:
-    webApp for food recipe using React,Context API,CSS and fetched data from external API.
 
 ### Getting Started
 -Build the components
@@ -16,6 +19,13 @@ Using the two in conjunction is one of the fastest ways to build a web app.
   2. Meals.jsx
   3. Modal.jsx
   4. Search.jsx
+
+### Associate Context API
+    made the 2 components 
+    -AppProvider
+    -AppContext
+    passed the special prop "children"
+    
 
 ### Typescript
 
