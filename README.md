@@ -1,24 +1,12 @@
 ## Description:
     webApp for food recipe using React,Context API,CSS and fetched data from The Meal DB.
 
-
-
-### Running React on Repl.it
-
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
-
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
-
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-
-
 ### Getting Started
--Build the components
-  1. Favorits.jsx
-  2. Meals.jsx
-  3. Modal.jsx
-  4. Search.jsx
+    -Build the components
+      1. Favorits.jsx
+      2. Meals.jsx
+      3. Modal.jsx
+      4. Search.jsx
 
 ### Associate Context API
     made the 2 components 
