@@ -11,46 +11,49 @@ const randomMealsUrl='https://www.themealdb.com/api/json/v1/1/random.php'
 
 
 
-const AppProvider = ({children})=>{
+const AppProvider = ({ children }) => {
+  const [meals, setMeals] = useState([])
+  const [searchTerm,setSearchTerm] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  
-  const [meals,setMeals] = useState([])
 
-  
+  const fetchMeals = async (url) => {
 
-  const fetchMeals = async(url)=>{
-    try{
-        const {data} = await axios(url)
+     setLoading(true)
+    
+    try {
+      const { data } = await axios.get(url)
+      if (data.meals) {
         setMeals(data.meals)
-        
-        
-      
-    }catch(error){
-        console.log(error.response)
-      
+      }
+      else {
+        setMeals([])
+      }
     }
+    catch (e) {
+
+      console.log(e.response)
+    }
+     setLoading(false)
     
   }
 
-  
-  useEffect(()=>{
-    fetchMeals(allMealsUrl)
-  },[])
+  useEffect(() => {
+    fetchMeals(`${allMealsUrl}${searchTerm}`)
+  }, [searchTerm])
 
 
-  
-  return <AppContext.Provider value ={{meals}} >
-
-    {children}
-  
-  </AppContext.Provider>
-
-  
+  return (
+    <AppContext.Provider
+      value={{loading,meals,setSearchTerm}}
+    >
+      {children}
+    </AppContext.Provider>
+  )
+}
+// make sure use
+export const useGlobalContext = () => {
+  return useContext(AppContext)
 }
 
-
-export const useGlobalContext = () =>{
-      return useContext(AppContext)
-    }
-
-export {AppContext,AppProvider}
+export { AppContext, AppProvider }
