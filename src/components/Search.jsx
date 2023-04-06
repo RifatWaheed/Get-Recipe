@@ -16,6 +16,7 @@ const Search = ()=>{
     if(text){
       setSearchTerm(text)
       
+      
     }
 
   }
