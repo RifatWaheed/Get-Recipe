@@ -15,6 +15,8 @@ const AppProvider = ({ children }) => {
   const [meals, setMeals] = useState([])
   const [searchTerm,setSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
+  const [showModal,setShowModal] = useState(false)
+  const [selectedMeal,setSelectedMeal] = useState(null)
 
 
   const fetchMeals = async (url) => {
@@ -38,6 +40,16 @@ const AppProvider = ({ children }) => {
     
   }
 
+
+  const selectMeal = (idMeal)=>{
+    let meal;
+    meal= meals.find((meal)=>meal.idMeal == idMeal)
+    setSelectedMeal(meal)
+    setShowModal(true)
+
+    
+  }
+
   useEffect(() => {
     fetchMeals(`${allMealsUrl}${searchTerm}`)
   }, [searchTerm])
@@ -45,7 +57,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{loading,meals,setSearchTerm}}
+      value={{loading,meals,setSearchTerm,showModal,selectedMeal,selectMeal}}
     >
       {children}
     </AppContext.Provider>

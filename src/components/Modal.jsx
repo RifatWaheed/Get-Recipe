@@ -1,6 +1,14 @@
+import { useGlobalContext } from "../context"
+
 const Modal = ()=>{
 
-  return <h5>Modal</h5>
+  return <aside className="modal-overlay">
+            <div className="modal-container">
+              <h1>Modal Show</h1>
+            
+            </div>
+  
+  </aside>
          
 }
 export default Modal
