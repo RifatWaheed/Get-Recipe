@@ -30,4 +30,3 @@
     
 ### Typescript
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
