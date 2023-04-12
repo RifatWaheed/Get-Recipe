@@ -27,6 +27,3 @@
 ### Modified the components accordingly
     with the help of context api we could build the bridges among the components passing data through them
     so the rest of the application was pretty much the use States and repitation of similar work and styling css.
-    
-### Typescript
-
